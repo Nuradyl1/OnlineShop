@@ -1,12 +1,17 @@
 import React, { FC } from 'react'
 
 interface HeaderProps {
-    logo: string
+    logo?: string;
+    image?: string;
+    popup?: boolean;
 }
 
-const Header: FC<HeaderProps> = ({ logo }) => {
+const Header: FC<HeaderProps> = ({ logo, image, popup }) => {
   return (
-    <div>Header</div>
+    <div className='flex justify-between items-center w-full p-2 shadow-sm bg-gray-300 rounded-b-2xl'>
+      <img src={logo} alt="" className='w-[100px] h-[100px] rounded-[50%]' />
+      <button className='px-10 p-4 text-white rounded-2xl  bg-blue-500'>Login</button>
+    </div>
   )
 };
 
